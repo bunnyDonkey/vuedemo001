@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  props: {
+  props: {    /* 接收父组件的属性 */
     slides: {
       type: Array,
       default: []
@@ -76,7 +76,7 @@ export default {
       clearInterval(this.invId)
     }
   },
-  mounted () {
+  mounted () {    /* 组件渲染完 */
     this.runInv();
   }
 }

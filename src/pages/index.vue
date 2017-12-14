@@ -45,13 +45,14 @@
 </template>
 
 <script scope>
-  import slideShow from '../components/slideShow'
+  import slideShow from '../components/slideShow'  //引入组件
+  
   export default {
-    components: {
+    components: {    /* 声明组件 */
       slideShow
     },
     created: function () {
-      this.$http.get('api/getNewsList')
+      this.$http.get('api/getNewsList')  //引入vue-resource 插件  使用ajax  不支持IE9以下
         .then((res) => {
           this.newsList = res.data
         }, (err) => {
@@ -63,7 +64,7 @@
         invTime: 2000,
         slides: [
           {
-            src: require('../assets/slideShow/pic1.jpg'),
+            src: require('../assets/slideShow/pic1.jpg'),   /* require 通过webpack引入图片   从js引入 */
             title: 'xxx1',
             href: 'detail/analysis'
           },
